@@ -1,6 +1,7 @@
 # mariadb practices
-## practice prob
-- Sovle practice probs
+## jdbc-practices
+- practice JDBC
 
-## sql practice
-- Practice SQL 
+## mysql_practice
+- practice-prob
+- sql-practice
