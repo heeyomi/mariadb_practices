@@ -5,16 +5,19 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class insertTest02 {
-
+public class UpdateTest02 {
 	public static void main(String[] args) {
-		insertDepartment("영업");
-		insertDepartment("개발");
-		insertDepartment("기획");
+		DeptVo vo = new DeptVo();
+		vo.setNo(4L);
+		vo.setName("전략기획팀");
+		
+		Boolean result = update(vo);
+		if(result) {
+			System.out.println("성공");
+		}
 	}
 	
-	
-	public static boolean insertDepartment(String name) {
+	public static boolean update(DeptVo vo) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		boolean result = false;
@@ -28,17 +31,16 @@ public class insertTest02 {
 			String url = "jdbc:mysql://192.168.254.41:3307/employees";
 			conn = DriverManager.getConnection(url, "hr", "hr");
 
-
 			// 3. SQL문 준비
-			String sql = "insert into dept values (null, ?)";
+			String sql = "update dept set name = ? where no = ?";
 			pstmt = conn.prepareStatement(sql);
 			
-			
 			// 4. 바인딩(binding)
-			pstmt.setString(1, name);
-			
-			//5. SQL문을 실행
-			int count = pstmt.executeUpdate(sql);
+			pstmt.setString(1, vo.getName());
+			pstmt.setLong(2, vo.getNo());
+
+			// 5. SQL문 실행
+			int count = pstmt.executeUpdate();
 			result =  count == 1;
 			
 		} catch (ClassNotFoundException e) {
@@ -61,5 +63,4 @@ public class insertTest02 {
 		
 		return result;
 	}
-
 }
