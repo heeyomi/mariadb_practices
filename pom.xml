@@ -43,6 +43,7 @@
 	
   <modules>
   	<module>jdbc-practices</module>
+  	<module>bookmall</module>
   </modules>
   
 </project>
