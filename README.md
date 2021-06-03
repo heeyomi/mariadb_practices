@@ -2,9 +2,9 @@
 📖 Study mariadb and JDBC
 
 ## 목차
-* [bookmall](#bookmall)
-* [jdbc-practices](#jdbc-practices)
-* [mysql_practice](#mysql_practice) 
+* [bookmall](https://github.com/heeyomi/mariadb_practices/tree/master/bookmall)
+* [jdbc-practices](https://github.com/heeyomi/mariadb_practices/tree/master/jdbc-practices)
+* [mysql_practice](https://github.com/heeyomi/mariadb_practices/tree/master/mysql_practice) 
 
 ## 개발환경
 - Linux CentOS 7
